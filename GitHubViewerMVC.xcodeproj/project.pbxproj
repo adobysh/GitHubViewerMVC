@@ -14,6 +14,7 @@
 		9D9B75C42570EF2D00246942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B75C32570EF2D00246942 /* Assets.xcassets */; };
 		9D9B75C72570EF2D00246942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B75C52570EF2D00246942 /* LaunchScreen.storyboard */; };
 		9D9B75D02570FF1600246942 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B75CF2570FF1600246942 /* RepositoryModel.swift */; };
+		9DA57C37258CE3130022E166 /* ArrayExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA57C36258CE3130022E166 /* ArrayExtention.swift */; };
 		9DBEE74725710E290075004E /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBEE74625710E290075004E /* RepositoryCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		9D9B75C62570EF2D00246942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D9B75C82570EF2D00246942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D9B75CF2570FF1600246942 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		9DA57C36258CE3130022E166 /* ArrayExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtention.swift; sourceTree = "<group>"; };
 		9DBEE74625710E290075004E /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,7 @@
 		9D9B75B92570EF2B00246942 /* GitHubViewerMVC */ = {
 			isa = PBXGroup;
 			children = (
+				9DA57C35258CE2F80022E166 /* Extension */,
 				9DBEE74325710CEF0075004E /* Modules */,
 				9D9B75BA2570EF2B00246942 /* AppDelegate.swift */,
 				9D9B75BC2570EF2B00246942 /* SceneDelegate.swift */,
@@ -68,6 +71,14 @@
 				9D9B75C82570EF2D00246942 /* Info.plist */,
 			);
 			path = GitHubViewerMVC;
+			sourceTree = "<group>";
+		};
+		9DA57C35258CE2F80022E166 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9DA57C36258CE3130022E166 /* ArrayExtention.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		9DBEE74325710CEF0075004E /* Modules */ = {
@@ -162,6 +173,7 @@
 				9DBEE74725710E290075004E /* RepositoryCell.swift in Sources */,
 				9D9B75BF2570EF2B00246942 /* RepositoryViewController.swift in Sources */,
 				9D9B75BB2570EF2B00246942 /* AppDelegate.swift in Sources */,
+				9DA57C37258CE3130022E166 /* ArrayExtention.swift in Sources */,
 				9D9B75BD2570EF2B00246942 /* SceneDelegate.swift in Sources */,
 				9D9B75D02570FF1600246942 /* RepositoryModel.swift in Sources */,
 			);

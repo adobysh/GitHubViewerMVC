@@ -7,14 +7,15 @@
 
 import UIKit
 
-class RepositoryViewController: UIViewController {
+class RepositoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
-    var repositories: [RepositoryModel] = []
+    private var repositories: [RepositoryModel] = []
     
     @IBAction func goAction(_ sender: Any) {
-        RepositoryModel.load(user: textField?.text ?? "") { completion in
+        RepositoryModel.load(user: textField?.text ?? "") { [weak self] completion in
+            guard let self = self else { return }
             switch completion {
             case .complete(let value):
                 self.repositories = value
@@ -29,15 +30,19 @@ class RepositoryViewController: UIViewController {
 
 }
 
-extension RepositoryViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension RepositoryViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositories.count
+        repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell") as! RepositoryCell
-        let item = repositories[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self)) as? RepositoryCell,
+              let item = repositories[safe: indexPath.row] else {
+            return UITableViewCell()
+        }
+        
         cell.titleLabel.text = item.name
         cell.descriptionLabel.text = item.createdAt
         return cell
