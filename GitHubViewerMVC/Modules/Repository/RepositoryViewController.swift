@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepositoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RepositoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
@@ -31,7 +31,7 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension RepositoryViewController {
+extension RepositoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         repositories.count
